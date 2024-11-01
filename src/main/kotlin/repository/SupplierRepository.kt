@@ -62,6 +62,8 @@ class SupplierRepository {
                 Supplier::class.java
             )
 
+            query.setParameter("id", id)
+
             supplier = query.resultList.firstOrNull()
             return supplier
         } catch (e: Exception) {

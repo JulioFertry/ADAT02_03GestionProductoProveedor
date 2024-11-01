@@ -61,7 +61,7 @@ class ProductRepository {
             em.transaction.begin()
 
             val query = em.createQuery(
-                "SELECT p FROM Product WHERE p.id = :id",
+                "SELECT p FROM Product p WHERE p.id = :id",
                 Product::class.java
             )
 
@@ -92,7 +92,7 @@ class ProductRepository {
             em.transaction.begin()
 
             val query = em.createQuery(
-                "SELECT p FROM Product WHERE p.id = :id",
+                "SELECT p FROM Product p WHERE p.id = :id",
                 Product::class.java
             )
 
@@ -121,7 +121,7 @@ class ProductRepository {
 
         try {
             val query = em.createQuery(
-                "SELECT p FROM Product WHERE p.id = :id",
+                "SELECT p FROM Product p WHERE p.id = :id",
                 Product::class.java
             )
 
@@ -143,7 +143,7 @@ class ProductRepository {
 
         try {
             val query = em.createQuery(
-                "SELECT p FROM Product WHERE p.stock > 0",
+                "SELECT p FROM Product p WHERE p.stock > 0",
                 Product::class.java
             )
 
@@ -164,7 +164,7 @@ class ProductRepository {
 
         try {
             val query = em.createQuery(
-                "SELECT p FROM Product WHERE p.stock = 0",
+                "SELECT p FROM Product p WHERE p.stock = 0",
                 Product::class.java
             )
 
