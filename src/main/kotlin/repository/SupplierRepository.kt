@@ -13,7 +13,7 @@ class SupplierRepository {
 
         try {
             val query = em.createQuery(
-                "SELECT s FROM Supplier s WHERE s.productId = :id",
+                "SELECT s FROM Supplier s WHERE s.id = :id",
                 Supplier::class.java
             )
 
