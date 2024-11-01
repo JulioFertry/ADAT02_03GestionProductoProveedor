@@ -7,17 +7,17 @@ import utils.Utilities
 
 class SupplierRepository {
 
-    fun getSupplierByProductId(id: String): Supplier? {
+    fun getSupplierByProductId(productId: String): Supplier? {
         val em: EntityManager = Utilities.getEntityManager()
         val supplier: Supplier?
 
         try {
             val query = em.createQuery(
-                "SELECT s FROM Supplier s WHERE s.id = :id",
+                "SELECT s FROM Supplier s JOIN s.products p WHERE p.id = :productId",
                 Supplier::class.java
             )
 
-            query.setParameter("id", id)
+            query.setParameter("productId", productId)
 
             supplier = query.resultList.firstOrNull()
             return supplier
