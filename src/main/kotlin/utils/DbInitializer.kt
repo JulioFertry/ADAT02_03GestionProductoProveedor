@@ -35,6 +35,9 @@ object DbInitializer {
         em.persist(product3)
         val product4 = productServ.createProduct("electronica", "ps3", null, 250.0f, supplier2)
         em.persist(product4)
+
+        em.transaction.commit()
+        em.close()
     }
 
 }
