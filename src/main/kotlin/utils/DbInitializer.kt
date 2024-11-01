@@ -8,7 +8,7 @@ import service.SupplierService
 import service.UserService
 
 
-class DbInitializer {
+object DbInitializer {
 
     private val userServ = UserService()
     private val supplierServ = SupplierService()
