@@ -1,4 +1,13 @@
 package console
 
-class Console {
+object Console {
+
+    fun showMessage(message: Any) {
+        println(message.toString())
+    }
+
+    fun readInput(): String {
+        return readln()
+    }
+
 }

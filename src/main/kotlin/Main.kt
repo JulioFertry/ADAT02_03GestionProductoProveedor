@@ -1,3 +1,7 @@
+import app.Menus
+
+
 fun main() {
-    println("Hello World!")
+    val menus = Menus()
+    menus.loginMenu()
 }

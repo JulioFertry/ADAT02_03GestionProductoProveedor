@@ -3,19 +3,27 @@ import jakarta.persistence.*
 
 
 @Entity
-@Table(name = "Proveedor")
+@Table
 data class Supplier(
 
-    @Column(name = "nombre")
+    @Column(length = 50, nullable = false)
     val name: String,
 
-    @Column(name = "direccion")
+    @Column(nullable = false)
     val address: String,
 
-    @Column(name = "productos")
-    val products: List<Product>,
+    @OneToMany(mappedBy = "supplier", cascade = [CascadeType.ALL])
+    val products: MutableList<Product>,
 
     @Id
-    val id: Long
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    val id: Long? = null
+) {
 
-)
+    override fun toString(): String {
+        return "Proovedor: $name\n" +
+                "ID: $id\n" +
+                "Direccion: $address\n"
+    }
+
+}

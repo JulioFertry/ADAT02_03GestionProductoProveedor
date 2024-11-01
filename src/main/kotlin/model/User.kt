@@ -3,13 +3,12 @@ import jakarta.persistence.*
 
 
 @Entity
-@Table(name = "Usuario")
+@Table
 data class User (
 
-    @Column(name = "contraseña", nullable = false, length = 20)
+    @Column(nullable = false, length = 20)
     val password: String,
 
     @Id
     val username: String
-
 )

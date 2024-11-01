@@ -4,7 +4,7 @@
              version="2.0">
 
     <!-- Bloque de configuración de una Base de Datos MySQL -->
-    <persistence-unit name="unidadMySQL" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="GestionProdProv" transaction-type="RESOURCE_LOCAL">
 
         <class>model.User</class>
         <class>model.Product</class>
@@ -15,7 +15,7 @@
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
 
             <!-- URL -->
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/pruebabd" />
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3307/gestionbd" />
 
             <!-- User -->
             <property name="jakarta.persistence.jdbc.user" value="root" />
